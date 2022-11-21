@@ -22,7 +22,7 @@ public class MenteeService {
 		return mrepo.findAll();
 	}
 	
-	public MenteeEntity findbyName(String name) {
+	public MenteeEntity findbyName(String name)throws Exception {
 		if(mrepo.findByName(name) != null) {
 			return mrepo.findByName(name);
 		}else {
