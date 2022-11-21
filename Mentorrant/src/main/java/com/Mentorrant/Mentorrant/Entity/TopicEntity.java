@@ -11,25 +11,23 @@ import javax.persistence.Table;
 @Table(name = "tbl_topic", schema ="db_mentorrant")
 public class TopicEntity {
 	@Id
-	@Column(name = "code", length = 50, precision = 0)
+	@Column(name = "topicId", length = 50, precision = 0)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int TopicId;
+	private int topicId;
 	
-	@Column(name = "code", length = 50, precision = 0)
+	@Column(name = "subject", length = 50, precision = 0)
 	private String subject;
 
+	public TopicEntity() {}
+	
 	public TopicEntity(int topicId, String subject) {
 		super();
-		TopicId = topicId;
+		this.topicId = topicId;
 		this.subject = subject;
 	}
 
 	public int getTopicId() {
-		return TopicId;
-	}
-
-	public void setTopicId(int topicId) {
-		TopicId = topicId;
+		return topicId;
 	}
 
 	public String getSubject() {

@@ -16,7 +16,7 @@ public class StudentEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int StudentId;
 	
-	@Column(name = "FirstName", length = , precision = 0)
+	@Column(name = "FirstName", length = 50, precision = 0)
 	private String FirstName;
 	
 	@Column(name = "LastName", length = 50, precision = 0)
