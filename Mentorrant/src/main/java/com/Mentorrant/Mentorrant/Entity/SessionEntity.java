@@ -29,10 +29,6 @@ public class SessionEntity {
 		return sessionId;
 	}
 
-	public void setSessionId(int sessionId) {
-		this.sessionId = sessionId;
-	}
-
 	public LocalDateTime getDateTime() {
 		return dateTime;
 	}
