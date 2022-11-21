@@ -16,7 +16,7 @@ public class StudentEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int StudentId;
 	
-	@Column(name = "FirstName", length = 99, precision = 0)
+	@Column(name = "FirstName", length = , precision = 0)
 	private String FirstName;
 	
 	@Column(name = "LastName", length = 50, precision = 0)
@@ -28,10 +28,11 @@ public class StudentEntity {
 	@Column(name = "Year", precision = 0)
 	private int Year;
 
-	public StudentEntity(int studentId, String name, String program, int year) {
+	public StudentEntity(int studentId, String firstName, String lastName, String program, int year) {
 		super();
 		StudentId = studentId;
-		Name = name;
+		FirstName = firstName;
+		LastName = lastName;
 		Program = program;
 		Year = year;
 	}
@@ -44,12 +45,20 @@ public class StudentEntity {
 		StudentId = studentId;
 	}
 
-	public String getName() {
-		return Name;
+	public String getFirstName() {
+		return FirstName;
 	}
 
-	public void setName(String name) {
-		Name = name;
+	public void setFirstName(String firstName) {
+		FirstName = firstName;
+	}
+
+	public String getLastName() {
+		return LastName;
+	}
+
+	public void setLastName(String lastName) {
+		LastName = lastName;
 	}
 
 	public String getProgram() {
@@ -67,6 +76,5 @@ public class StudentEntity {
 	public void setYear(int year) {
 		Year = year;
 	}
-	
 	
 }
