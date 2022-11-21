@@ -1,13 +1,19 @@
 package com.Mentorrant.Mentorrant.Entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tbl_admin")
 public class AdminEntity {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int adminId;
+	
 	private String name;
 	private String username;
 	private String password;
@@ -19,7 +25,7 @@ public class AdminEntity {
 		super();
 		this.adminId = adminId;
 		this.name = name;
-		this.username = usernmae;
+		this.username = username;
 		this.password = password;
 		this.expertise = expertise;
 	}
@@ -52,7 +58,7 @@ public class AdminEntity {
 		this.password = password;
 	}
 	
-	public String expertise getExpertise() {
+	public String getExpertise() {
 		return expertise;
 	}
 	

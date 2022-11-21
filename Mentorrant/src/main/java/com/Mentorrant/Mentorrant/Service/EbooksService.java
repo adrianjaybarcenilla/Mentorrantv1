@@ -24,16 +24,16 @@ public class EbooksService {
 	}
 	
 	public EbooksEntity findbyBookName(String bookName) {
-		if(ebrepo.findByName(bookName) != null) {
-			return ebrepo.findByName(bookName);
+		if(ebrepo.findByBookTitle(bookName) != null) {
+			return ebrepo.findByBookTitle(bookName);
 		}else {
 			return null;
 		}
 	}
 	
-	public EbooksEntity findbyGenre(String genre) {
-		if(ebrepo.findByGenre(genre) != null) {
-			return ebrepo.findByGenre(genre);			
+	public EbooksEntity findbyGenre(String bookGenre) {
+		if(ebrepo.findByBookGenre(bookGenre) != null) {
+			return ebrepo.findByBookGenre(bookGenre);			
 		}else {
 			return null;
 		}
@@ -45,6 +45,7 @@ public class EbooksService {
 		try {
 			ebook = ebrepo.findById(id).get();
 			
+			ebook.setBookTitle(newEbook.getBookTitle());
 			ebook.setBookAuthor(newEbook.getBookAuthor());
 			ebook.setBookGenre(newEbook.getBookGenre());
 			ebook.setyearPublish(newEbook.getyearPublish());

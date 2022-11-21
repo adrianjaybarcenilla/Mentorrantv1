@@ -15,9 +15,9 @@ public class StudentEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int studentId;
-	
-	@Column(name = "FirstName", length = 50, precision = 0)
-	private String FirstName;
+
+	@Column(name = "firstName", length = 50, precision = 0)
+	private String firstName;
 	
 	@Column(name = "lastName", length = 50, precision = 0)
 	private String lastName;
@@ -78,7 +78,4 @@ public class StudentEntity {
 	public void setYear(int year) {
 		this.year = year;
 	}
-
-	
-	
 }

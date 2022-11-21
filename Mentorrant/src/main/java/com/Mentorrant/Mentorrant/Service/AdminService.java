@@ -39,11 +39,11 @@ public class AdminService {
 		}
 	}
 	
-	public AdminEntity updateAdmin(int adminId , AdminEntity newAdmin) throws Exception{
+	public AdminEntity updateAdmin(int id , AdminEntity newAdmin) throws Exception{
 		AdminEntity admin = new AdminEntity();
 		
 		try {
-			admin = arepo.findById(adminId).get();
+			admin = arepo.findById(id).get();
 			
 			admin.setName(newAdmin.getName());
 			admin.setUsername(newAdmin.getUsername());
@@ -56,11 +56,11 @@ public class AdminService {
 		}
 	}
 	
-	public String deleteAdmin(int adminId) {
+	public String deleteAdmin(int id) {
 		String msg;
 		
-		if(arepo.findById(adminId) != null) {
-			arepo.deleteById(adminId);
+		if(arepo.findById(id) != null) {
+			arepo.deleteById(id);
 			
 			msg = "Admin Id Number " + id + " has been successfully deleted";
 		} else {
