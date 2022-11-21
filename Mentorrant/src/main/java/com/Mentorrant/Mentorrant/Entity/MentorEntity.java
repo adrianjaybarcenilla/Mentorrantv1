@@ -22,7 +22,7 @@ public class MentorEntity {
 	private String name;
 	
 	@Column(name = "rating", precision = 0)
-	private int rating;
+	private double rating;
 	
 	@Column(name = "courseId", precision = 0)
 	private int courseId;
@@ -60,12 +60,12 @@ public class MentorEntity {
 		this.name = name;
 	}
 
-	public int getRating() {
+	public double getRating() {
 		return rating;
 	}
 
-	public void setRating(int rating) {
-		this.rating = rating;
+	public void setRating(double d) {
+		this.rating = d;
 	}
 
 	public int getCourseId() {
