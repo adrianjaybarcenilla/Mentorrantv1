@@ -13,6 +13,7 @@ public class AdminEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int adminId;
+	
 	private String name;
 	private String username;
 	private String password;
