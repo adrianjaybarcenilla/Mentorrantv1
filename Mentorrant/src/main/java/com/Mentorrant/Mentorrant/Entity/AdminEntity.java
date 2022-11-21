@@ -19,7 +19,7 @@ public class AdminEntity {
 		super();
 		this.adminId = adminId;
 		this.name = name;
-		this.username = usernmae;
+		this.username = username;
 		this.password = password;
 		this.expertise = expertise;
 	}
@@ -52,7 +52,7 @@ public class AdminEntity {
 		this.password = password;
 	}
 	
-	public String expertise getExpertise() {
+	public String getExpertise() {
 		return expertise;
 	}
 	

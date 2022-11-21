@@ -32,7 +32,7 @@ public class AdminController {
 
 	@GetMapping("/get")
 	public List<AdminEntity>getAllAdmin(){
-		return aserve.getAllAdmin();
+		return aserve.getAllAdmins();
 	}
 	
 	@GetMapping("/getByAdminName")
