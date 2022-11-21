@@ -31,7 +31,6 @@ public class SessionService {
 		}
 	}
 	
-	
 	public SessionEntity updateSession(int id, SessionEntity newSession) throws Exception{
 		SessionEntity session = new SessionEntity();
 		
@@ -46,7 +45,7 @@ public class SessionService {
 		}
 	}
 	
-	public String deleteCourse(int id) {
+	public String deleteSession(int id) {
 		String msg;
 		
 		if(srepo.findById(id) != null) {
