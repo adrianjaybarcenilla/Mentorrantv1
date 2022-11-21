@@ -28,7 +28,7 @@ CREATE TABLE `tlb_mentor` (
   `mentorId` int NOT NULL,
   `studentId` int NOT NULL,
   `name` varchar(45) NOT NULL,
-  `rating` varchar(45) NOT NULL,
+  `rating` double NOT NULL,
   `courseId` int NOT NULL,
   PRIMARY KEY (`mentorId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-21 22:01:13
+-- Dump completed on 2022-11-21 22:12:50
