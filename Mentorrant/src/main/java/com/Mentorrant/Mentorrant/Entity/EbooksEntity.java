@@ -49,6 +49,4 @@ public class EbooksEntity {
 	public void setyearPublish(int yearPublish) {
 		this.yearPublish = yearPublish;
 	}
-	
-	
 }

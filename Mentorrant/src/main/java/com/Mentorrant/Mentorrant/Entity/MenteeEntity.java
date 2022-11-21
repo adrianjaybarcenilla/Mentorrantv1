@@ -12,14 +12,16 @@ import javax.persistence.Table;
 public class MenteeEntity {
 	
 	@Id
-	@Column(name = "StudentId", length = 50, precision = 0)
+	@Column(name = "studentId", length = 50, precision = 0)
 	private int studentId;
 	
-	@Column(name = "CourseId", length = 50, precision = 0)
+	@Column(name = "courseId", length = 50, precision = 0)
 	private int courseId;
 	
 	@Column(name = "name", length = 50, precision = 0)
 	private String name;
+
+	public MenteeEntity() {}
 
 	public MenteeEntity(int studentId, int courseId, String name) {
 		super();
@@ -33,7 +35,7 @@ public class MenteeEntity {
 	}
 
 	public void setStudentId(int studentId) {
-		studentId = studentId;
+		this.studentId = studentId;
 	}
 
 	public int getCourseId() {
@@ -41,16 +43,10 @@ public class MenteeEntity {
 	}
 
 	public void setCourseId(int courseId) {
-		courseId = courseId;
+		this.courseId = courseId;
 	}
 
 	public String getName() {
 		return name;
 	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	
 }
