@@ -29,7 +29,7 @@ public class TopicController {
 
 	@GetMapping("/get")
 	public List<TopicEntity>getAllTopic(){
-		return topicserv.getAllMentee();
+		return topicserv.getAllTopic();
 	}
 	
 	@GetMapping("/getBySubject")
