@@ -35,7 +35,7 @@ public class MenteeController {
 	}
 	
 	@GetMapping("/getByName")
-	public MenteeEntity findbyName(@RequestParam String name) {
+	public MenteeEntity findbyName(@RequestParam String name) throws Exception{
 		return mentsev.findbyName(name);
 	}
 
