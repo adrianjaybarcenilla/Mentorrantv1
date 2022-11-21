@@ -45,12 +45,12 @@ public class AdminController {
 		return aserve.findByExpertise(expertise);
 	}
 	
-	@PutMapping("/UpdateAdmin")
+	@PutMapping("/putAdmin")
 	public AdminEntity updateAdmin(@RequestParam int adminId , @RequestBody AdminEntity newAdmin) throws Exception{
 		return aserve.updateAdmin(adminId, newAdmin);
 	}
 	
-	@DeleteMapping("/DeleteAdmin/{id}")
+	@DeleteMapping("/deleteAdmin/{id}")
 	public String deleteAdmin(@PathVariable int adminId) {
 		return aserve.deleteAdmin(adminId);
 	}
