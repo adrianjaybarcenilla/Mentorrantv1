@@ -10,46 +10,39 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tbl_mentor", schema ="db_mentorrant")
 public class MentorEntity {
-	
 	@Id
-	@Column(name = "mentorId", precision = 0)
-	private int mentorId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "mentorid")
+	private int mentorid;
 	
-	@Column(name = "studentId", precision = 0)
-	private int studentId;
-	
-	@Column(name = "name", length = 50, precision = 0)
-	private String name;
-	
-	@Column(name = "rating", precision = 0)
+	private int studentid;
+	private String name; 
 	private double rating;
-	
-	@Column(name = "courseId", precision = 0)
-	private int courseId;
+	private int courseid;
 	
 	public MentorEntity() {
 		super();
 	}
 
-	public MentorEntity(int mentorId, int studentId, String name, int rating, int courseId) {
+	public MentorEntity(int mentorid, int studentid, String name, int rating, int courseid) {
 		super();
-		this.mentorId = mentorId;
-		this.studentId = studentId;
+		this.mentorid = mentorid;
+		this.studentid = studentid;
 		this.name = name;
 		this.rating = rating;
-		this.courseId = courseId;
+		this.courseid = courseid;
 	}
 
 	public int getMentorId() {
-		return mentorId;
+		return mentorid;
 	}
 
 	public int getStudentId() {
-		return studentId;
+		return studentid;
 	}
 
 	public void setStudentId(int studentId){
-		this.studentId = studentId;
+		this.studentid = studentId;
 	}
 
 	public String getName() {
@@ -69,11 +62,11 @@ public class MentorEntity {
 	}
 
 	public int getCourseId() {
-		return courseId;
+		return courseid;
 	}
 
 	public void setCourseId(int courseId) {
-		this.courseId = courseId;
+		this.courseid = courseId;
 	}
 	
 	
