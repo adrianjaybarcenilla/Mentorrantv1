@@ -27,6 +27,8 @@ public class StudentEntity {
 	
 	@Column(name = "year", precision = 0)
 	private int year;
+	
+	public StudentEntity() {}
 
 	public StudentEntity(int studentId, String firstName, String lastName, String program, int year) {
 		super();
