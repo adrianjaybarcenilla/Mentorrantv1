@@ -24,7 +24,7 @@ public class StudentService {
 		return studrepo.findAll();
 	}
 	
-	public StudentEntity findStudentByFirstName(String firstName) {
+	public StudentEntity findByFirstName(String firstName) {
 		if(studrepo.findByFirstName(firstName) != null) {
 			return studrepo.findByFirstName(firstName);
 		}else {
@@ -32,7 +32,7 @@ public class StudentService {
 		}
 	}
 	
-	public StudentEntity findbyLastName(String lastName) {
+	public StudentEntity findByLastName(String lastName) {
 		if(studrepo.findByLastName(lastName) != null) {
 			return studrepo.findByLastName(lastName);			
 		}else {
@@ -57,7 +57,7 @@ public class StudentService {
 		}
 	}
 	
-	public String deleteStudents(int studentId) {
+	public String deleteStudent(int studentId) {
 		String msg;
 		
 		if(studrepo.findById(studentId) != null) {
