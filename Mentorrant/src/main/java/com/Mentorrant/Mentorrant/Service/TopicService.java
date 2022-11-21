@@ -19,7 +19,7 @@ public class TopicService {
 		return mrepo.save(topic);
 	}
 	
-	public List<TopicEntity> getAllMentee(){
+	public List<TopicEntity> getAllTopic(){
 		return mrepo.findAll();
 	}
 	
