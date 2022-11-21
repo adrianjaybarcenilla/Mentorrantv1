@@ -19,7 +19,7 @@ import com.Mentorrant.Mentorrant.Service.EbooksService;
 
 
 @RestController
-@RequestMapping("/Ebooks")
+@RequestMapping("/ebooks")
 public class EbooksController {
 
 	@Autowired
@@ -41,8 +41,8 @@ public class EbooksController {
 	}
 	
 	@GetMapping("/getByBookGenre")
-	public EbooksEntity findbyGenre(@RequestParam String genre) {
-		return ebserve.findbyGenre(genre);
+	public EbooksEntity findbyGenre(@RequestParam String bookGenre) {
+		return ebserve.findbyGenre(bookGenre);
 	}
 	
 	@PutMapping("/UpdateEbook")

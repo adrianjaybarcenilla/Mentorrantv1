@@ -1,13 +1,19 @@
 package com.Mentorrant.Mentorrant.Entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tbl_ebooks")
 public class EbooksEntity {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int bookId;
+	private String bookTitle;
 	private String bookAuthor;
 	private String bookGenre;
 	private int yearPublish;
@@ -48,6 +54,14 @@ public class EbooksEntity {
 
 	public void setyearPublish(int yearPublish) {
 		this.yearPublish = yearPublish;
+	}
+
+	public String getBookTitle() {
+		return bookTitle;
+	}
+
+	public void setBookTitle(String bookTitle) {
+		this.bookTitle = bookTitle;
 	}
 	
 	
