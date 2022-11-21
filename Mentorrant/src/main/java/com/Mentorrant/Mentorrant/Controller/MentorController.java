@@ -17,7 +17,7 @@ import com.Mentorrant.Mentorrant.Entity.MentorEntity;
 import com.Mentorrant.Mentorrant.Service.MentorService;
 
 @RestController
-@RequestMapping("/Mentors")
+@RequestMapping("/mentors")
 public class MentorController {
 	
 	@Autowired
@@ -34,7 +34,7 @@ public class MentorController {
 	}
 	
 	@GetMapping("/getByName")
-	public MentorEntity findbyName(@RequestParam String name) {
+	public MentorEntity findbyName(@RequestParam String name) throws Exception {
 		return mServe.findByName(name);
 	}
 	
