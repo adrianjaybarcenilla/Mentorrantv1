@@ -63,6 +63,5 @@ public class EbooksEntity {
 	public void setBookTitle(String bookTitle) {
 		this.bookTitle = bookTitle;
 	}
-	
-	
+
 }
