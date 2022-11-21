@@ -25,12 +25,12 @@ DROP TABLE IF EXISTS `tlb_mentor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tlb_mentor` (
-  `MentorId` int NOT NULL,
-  `StudentId` int NOT NULL,
-  `Name` varchar(45) NOT NULL,
-  `Rating` varchar(45) NOT NULL,
-  `CourseId` int NOT NULL,
-  PRIMARY KEY (`MentorId`)
+  `mentorId` int NOT NULL,
+  `studentId` int NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `rating` varchar(45) NOT NULL,
+  `courseId` int NOT NULL,
+  PRIMARY KEY (`mentorId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-21 21:41:59
+-- Dump completed on 2022-11-21 22:01:13
