@@ -12,9 +12,9 @@ import javax.persistence.Table;
 public class TopicEntity {
 	
 	@Id
-	@Column(name = "topicid", length = 50, precision = 0)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int topicid;
+	@Column(name = "topic_id", length = 50, precision = 0)
+	private int topicId;
 	
 	@Column(name = "subject", length = 50, precision = 0)
 	private String subject;
@@ -23,12 +23,12 @@ public class TopicEntity {
 	
 	public TopicEntity(int topicid, String subject) {
 		super();
-		this.topicid = topicid;
+		this.topicId = topicid;
 		this.subject = subject;
 	}
 
 	public int getTopicId() {
-		return topicid;
+		return topicId;
 	}
 
 	public String getSubject() {
