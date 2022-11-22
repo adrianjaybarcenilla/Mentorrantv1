@@ -25,10 +25,10 @@ DROP TABLE IF EXISTS `tbl_admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tbl_admin` (
-  `admin_id` int NOT NULL,
-  `name` varchar(45) DEFAULT NULL,
-  `username` varchar(45) DEFAULT NULL,
-  `password` varchar(45) DEFAULT NULL,
+  `admin_id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `username` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
   `expertise` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`admin_id`),
   UNIQUE KEY `username_UNIQUE` (`username`)
