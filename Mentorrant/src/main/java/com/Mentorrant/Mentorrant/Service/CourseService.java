@@ -33,7 +33,7 @@ public class CourseService{
 
 	public CourseEntity findByCourseDescription(String courseDescription) {
 		if(crepo.findByCourseDescription(courseDescription) != null) {
-			return crepo.findByCourseCode(courseDescription);
+			return crepo.findByCourseDescription(courseDescription);
 		}else {
 			return null;
 		}
@@ -46,7 +46,7 @@ public class CourseService{
 			course = crepo.findById(id).get();
 			
 			course.setCourseCode(newCourse.getCourseCode());
-			course.setCourseDescription(newCourse.getCourseCode());
+			course.setCourseDescription(newCourse.getCourseDescription());
 			
 			return crepo.save(course);
 		} catch(NoSuchElementException next) {
