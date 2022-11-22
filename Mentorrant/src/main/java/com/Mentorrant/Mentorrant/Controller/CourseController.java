@@ -28,7 +28,7 @@ public class CourseController{
 		return cserv.addCourse(course);
 	}
 
-	@GetMapping("/get")
+	@GetMapping("/getAllCourse")
 	public List<CourseEntity>getAllCourse(){
 		return cserv.getAllCourse();
 	}
@@ -43,12 +43,12 @@ public class CourseController{
 		return cserv.findByCourseDescription(courseDescription);
 	}
 
-	@PutMapping("/UpdateCourse")
+	@PutMapping("/updateCourse")
 	public CourseEntity update(@RequestParam int id , @RequestBody CourseEntity newCourse) throws Exception{
 		return cserv.updateCourse(id, newCourse);
 	}
 	
-	@DeleteMapping("/DeleteCourse/{id}")
+	@DeleteMapping("/deleteCourse/{id}")
 	public String deleteCourse(@PathVariable int id) {
 		return cserv.deleteCourse(id);
 	}
