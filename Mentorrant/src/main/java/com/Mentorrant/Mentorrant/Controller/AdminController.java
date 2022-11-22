@@ -19,7 +19,7 @@ import com.Mentorrant.Mentorrant.Service.AdminService;
 
 
 @RestController
-@RequestMapping("/Admin")
+@RequestMapping("/admin")
 public class AdminController {
 
 	@Autowired

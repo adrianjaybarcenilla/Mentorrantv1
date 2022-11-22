@@ -23,13 +23,13 @@ DROP TABLE IF EXISTS `tbl_student`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tbl_student` (
-  `studentId` int NOT NULL AUTO_INCREMENT,
-  `firstName` varchar(99) DEFAULT NULL,
-  `lastName` varchar(50) DEFAULT NULL,
+  `student_id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(99) DEFAULT NULL,
+  `last_name` varchar(50) DEFAULT NULL,
   `program` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `year` int NOT NULL,
-  PRIMARY KEY (`studentId`),
-  UNIQUE KEY `Id_UNIQUE` (`studentId`)
+  PRIMARY KEY (`student_id`),
+  UNIQUE KEY `Id_UNIQUE` (`student_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-21 22:07:19
+-- Dump completed on 2022-11-22 10:06:35

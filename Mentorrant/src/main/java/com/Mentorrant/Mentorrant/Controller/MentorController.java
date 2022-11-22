@@ -17,7 +17,7 @@ import com.Mentorrant.Mentorrant.Entity.MentorEntity;
 import com.Mentorrant.Mentorrant.Service.MentorService;
 
 @RestController
-@RequestMapping("/Mentors")
+@RequestMapping("/mentors")
 public class MentorController {
 	
 	@Autowired
@@ -28,22 +28,22 @@ public class MentorController {
 		return mServe.addMentor(mentor);
 	}
 
-	@GetMapping("/get")
+	@GetMapping("/getAllMentors")
 	public List<MentorEntity>getAllMentors(){
 		return mServe.getAllMentors();
 	}
 	
 	@GetMapping("/getByName")
-	public MentorEntity findbyName(@RequestParam String name) {
+	public MentorEntity findbyName(@RequestParam String name) throws Exception {
 		return mServe.findByName(name);
 	}
 	
-	@PutMapping("/UpdateMentor")
+	@PutMapping("/updateMentor")
 	public MentorEntity updateMentor(@RequestParam int id , @RequestBody MentorEntity newMentor) throws Exception{
 		return mServe.updateMentor(id, newMentor);
 	}
 	
-	@DeleteMapping("/DeleteMentor/{id}")
+	@DeleteMapping("/deleteMentor/{id}")
 	public String deleteMentor(@PathVariable int id) {
 		return mServe.deleteMentor(id);
 	}

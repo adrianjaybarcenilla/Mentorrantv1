@@ -12,56 +12,59 @@ public class EbooksEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int bookId;
-	private String bookTitle;
-	private String bookAuthor;
-	private String bookGenre;
-	private int yearPublish;
+	private int bookid;
+	
+	private String booktitle;
+	private String bookauthor;
+	private String bookgenre;
+	private int yearpublish;
 	
 	public EbooksEntity() {}
-
-	public EbooksEntity(int bookId, String bookAuthor, String bookGenre, int yearPublish) {
+	
+	public EbooksEntity(int book_id, String book_title, String book_author, String book_genre, int year_publish) {
 		super();
-		this.bookId = bookId;
-		this.bookAuthor = bookAuthor;
-		this.bookGenre = bookGenre;
-		this.yearPublish = yearPublish;
+		this.bookid = book_id;
+		this.booktitle = book_title;
+		this.bookauthor = book_author;
+		this.bookgenre = book_genre;
+		this.yearpublish = year_publish;
 	}
 
-	public int getBookId() {
-		return bookId;
+	public int getBook_id() {
+		return bookid;
 	}
 
-	public String getBookAuthor() {
-		return bookAuthor;
+	public String getBook_title() {
+		return booktitle;
 	}
 
-	public void setBookAuthor(String bookAuthor) {
-		this.bookAuthor = bookAuthor;
+	public void setBook_title(String book_title) {
+		this.booktitle = book_title;
 	}
 
-	public String getBookGenre() {
-		return bookGenre;
+	public String getBook_author() {
+		return bookauthor;
 	}
 
-	public void setBookGenre(String bookGenre) {
-		this.bookGenre = bookGenre;
+	public void setBook_author(String book_author) {
+		this.bookauthor = book_author;
 	}
 
-	public int getyearPublish() {
-		return yearPublish;
+	public String getBook_genre() {
+		return bookgenre;
 	}
 
-	public void setyearPublish(int yearPublish) {
-		this.yearPublish = yearPublish;
+	public void setBook_genre(String book_genre) {
+		this.bookgenre = book_genre;
 	}
 
-	public String getBookTitle() {
-		return bookTitle;
+	public int getYear_publish() {
+		return yearpublish;
 	}
 
-	public void setBookTitle(String bookTitle) {
-		this.bookTitle = bookTitle;
+	public void setYear_publish(int year_publish) {
+		this.yearpublish = year_publish;
 	}
+	
 
 }

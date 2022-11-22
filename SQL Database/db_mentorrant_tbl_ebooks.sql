@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `db_mentorrant` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `db_mentorrant`;
 -- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
 --
 -- Host: localhost    Database: db_mentorrant
@@ -25,12 +23,13 @@ DROP TABLE IF EXISTS `tbl_ebooks`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tbl_ebooks` (
-  `bookId` int NOT NULL,
-  `bookAuthor` varchar(45) DEFAULT NULL,
-  `bookGenre` varchar(45) DEFAULT NULL,
-  `yearPublish` int DEFAULT NULL,
-  PRIMARY KEY (`bookId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `bookid` int NOT NULL AUTO_INCREMENT,
+  `booktitle` varchar(45) DEFAULT NULL,
+  `bookauthor` varchar(45) DEFAULT NULL,
+  `bookgenre` varchar(45) DEFAULT NULL,
+  `yearpublish` int DEFAULT NULL,
+  PRIMARY KEY (`bookid`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +38,7 @@ CREATE TABLE `tbl_ebooks` (
 
 LOCK TABLES `tbl_ebooks` WRITE;
 /*!40000 ALTER TABLE `tbl_ebooks` DISABLE KEYS */;
+INSERT INTO `tbl_ebooks` VALUES (2,'LOTR','Tolkin','adventure',123),(3,'Harry Potter','Rowling','adventure',123);
 /*!40000 ALTER TABLE `tbl_ebooks` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-21 16:56:56
+-- Dump completed on 2022-11-22 10:06:35

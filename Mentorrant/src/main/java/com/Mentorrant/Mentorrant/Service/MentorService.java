@@ -23,11 +23,11 @@ public class MentorService {
 		return mRepo.findAll();
 	}
 	
-	public MentorEntity findByName(String name) {
+	public MentorEntity findByName(String name) throws Exception{
 		if(mRepo.findByName(name) != null) {
 			return mRepo.findByName(name);
 		}else {
-			return null;
+			throw new Exception("There is no student having the name " + name + " in the database");
 		}
 	}
 	

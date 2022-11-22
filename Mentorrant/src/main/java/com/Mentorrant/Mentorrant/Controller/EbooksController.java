@@ -2,7 +2,6 @@ package com.Mentorrant.Mentorrant.Controller;
 
 import java.util.List;
 
-import org.hibernate.service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,15 +18,15 @@ import com.Mentorrant.Mentorrant.Service.EbooksService;
 
 
 @RestController
-@RequestMapping("/ebooks")
+@RequestMapping("/Ebooks")
 public class EbooksController {
 
 	@Autowired
 	EbooksService ebserve;
 	
 	@PostMapping("/postEbooks")
-	public EbooksEntity addEbook(@RequestBody EbooksEntity book) {
-		return ebserve.addEbook(book);
+	public EbooksEntity addEbook(@RequestBody EbooksEntity Ebook) {
+		return ebserve.addEbook(Ebook);
 	}
 
 	@GetMapping("/get")
@@ -36,13 +35,13 @@ public class EbooksController {
 	}
 	
 	@GetMapping("/getByBookName")
-	public EbooksEntity findbyBookName(@RequestParam String bookName) {
-		return ebserve.findbyBookName(bookName);
+	public EbooksEntity findByBookTitle(@RequestParam String book_title) {
+		return ebserve.findByBookTitle(book_title);
 	}
 	
 	@GetMapping("/getByBookGenre")
-	public EbooksEntity findbyGenre(@RequestParam String bookGenre) {
-		return ebserve.findbyGenre(bookGenre);
+	public EbooksEntity findByBookGenre(@RequestParam String book_genre) {
+		return ebserve.findByBookGenre(book_genre);
 	}
 	
 	@PutMapping("/UpdateEbook")
