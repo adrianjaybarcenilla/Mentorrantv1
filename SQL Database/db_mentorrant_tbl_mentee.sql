@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `db_mentorrant` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `db_mentorrant`;
 -- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
 --
 -- Host: localhost    Database: db_mentorrant
@@ -26,8 +28,6 @@ CREATE TABLE `tbl_mentee` (
   `studentId` varchar(45) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
   `courseId` varchar(45) DEFAULT NULL,
-  `student_id` int NOT NULL,
-  `course_id` int DEFAULT NULL,
   PRIMARY KEY (`studentId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -38,7 +38,7 @@ CREATE TABLE `tbl_mentee` (
 
 LOCK TABLES `tbl_mentee` WRITE;
 /*!40000 ALTER TABLE `tbl_mentee` DISABLE KEYS */;
-INSERT INTO `tbl_mentee` VALUES ('0','fsfdsf','35'),('1213313','Ella','12');
+INSERT INTO `tbl_mentee` VALUES ('0','fsfdsf','4'),('1','Ella','12');
 /*!40000 ALTER TABLE `tbl_mentee` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-22 10:20:42
+-- Dump completed on 2022-11-22 11:27:33
