@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `db_mentorrant` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `db_mentorrant`;
 -- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
 --
 -- Host: localhost    Database: db_mentorrant
@@ -27,8 +25,11 @@ DROP TABLE IF EXISTS `tbl_topic`;
 CREATE TABLE `tbl_topic` (
   `topicid` int NOT NULL AUTO_INCREMENT,
   `subject` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`topicid`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+  `topic_id` int NOT NULL,
+  PRIMARY KEY (`topicId`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +38,9 @@ CREATE TABLE `tbl_topic` (
 
 LOCK TABLES `tbl_topic` WRITE;
 /*!40000 ALTER TABLE `tbl_topic` DISABLE KEYS */;
+
 INSERT INTO `tbl_topic` VALUES (3,'automata'),(4,'IE'),(5,'IS');
+
 /*!40000 ALTER TABLE `tbl_topic` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +53,5 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-22 10:20:41
+-- Dump completed on 2022-11-22 10:06:35
+
