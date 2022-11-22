@@ -23,10 +23,11 @@ DROP TABLE IF EXISTS `tbl_session`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tbl_session` (
-  `SessionId` int NOT NULL AUTO_INCREMENT,
-  `DateTime` datetime NOT NULL,
-  PRIMARY KEY (`SessionId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `session_id` int NOT NULL AUTO_INCREMENT,
+  `date_time` datetime DEFAULT NULL,
+  `session_description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`session_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,6 +36,7 @@ CREATE TABLE `tbl_session` (
 
 LOCK TABLES `tbl_session` WRITE;
 /*!40000 ALTER TABLE `tbl_session` DISABLE KEYS */;
+INSERT INTO `tbl_session` VALUES (2,NULL,'Tabang Lord'),(3,NULL,'Me and My mentee');
 /*!40000 ALTER TABLE `tbl_session` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -47,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-22 10:06:35
+-- Dump completed on 2022-11-22 11:52:31
