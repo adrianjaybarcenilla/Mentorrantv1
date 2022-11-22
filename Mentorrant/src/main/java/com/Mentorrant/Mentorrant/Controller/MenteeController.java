@@ -29,7 +29,7 @@ public class MenteeController {
 		return mentsev.addMentee(mentee);
 	}
 
-	@GetMapping("/get")
+	@GetMapping("/getAllMentee")
 	public List<MenteeEntity>getAllMentee(){
 		return mentsev.getAllMentee();
 	}

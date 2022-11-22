@@ -8,5 +8,5 @@ import com.Mentorrant.Mentorrant.Entity.TopicEntity;
 @Repository
 public interface TopicRepository extends JpaRepository<TopicEntity, Integer>{
 	
-	TopicEntity findBySubject(String subject);
+	TopicEntity findBysubject(String subject);
 }
