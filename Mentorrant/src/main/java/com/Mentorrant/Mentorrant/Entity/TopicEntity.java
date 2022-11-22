@@ -10,6 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tbl_topic", schema ="db_mentorrant")
 public class TopicEntity {
+	
 	@Id
 	@Column(name = "topicid", length = 50, precision = 0)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

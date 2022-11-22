@@ -27,8 +27,8 @@ public class TopicController {
 		return topicserv.addTopic(topic);
 	}
 
-	@GetMapping("/get")
-	public List<TopicEntity>getAllTopic(){
+	@GetMapping("/getAllTopic")
+	public List<TopicEntity> getAllTopic(){
 		return topicserv.getAllTopic();
 	}
 	

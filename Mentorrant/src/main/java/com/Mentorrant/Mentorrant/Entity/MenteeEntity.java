@@ -15,19 +15,19 @@ public class MenteeEntity {
 	@Column(name = "studentid", length = 50, precision = 0)
 	private int studentid;
 	
-	@Column(name = "courseid", length = 50, precision = 0)
-	private int courseid;
-	
 	@Column(name = "name", length = 50, precision = 0)
 	private String name;
 
+	@Column(name = "courseid", length = 50, precision = 0)
+	private int courseid;
+	
 	public MenteeEntity() {}
 
-	public MenteeEntity(int studentid, int courseid, String name) {
+	public MenteeEntity(int studentid, String name, int courseid) {
 		super();
 		this.studentid = studentid;
-		this.courseid = courseid;
 		this.name = name;
+		this.courseid = courseid;
 	}
 
 	public int getStudentId() {
