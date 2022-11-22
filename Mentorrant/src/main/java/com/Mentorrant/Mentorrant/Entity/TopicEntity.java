@@ -13,7 +13,7 @@ public class TopicEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "topic_id", length = 50, precision = 0)
+	@Column(name = "topicid", length = 50, precision = 0)
 	private int topicId;
 	
 	@Column(name = "subject", length = 50, precision = 0)
