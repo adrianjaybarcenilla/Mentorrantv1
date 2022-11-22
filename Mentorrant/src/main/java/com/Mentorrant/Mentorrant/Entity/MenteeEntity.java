@@ -12,38 +12,38 @@ import javax.persistence.Table;
 public class MenteeEntity {
 	
 	@Id
-	@Column(name = "studentId", length = 50, precision = 0)
-	private int studentId;
+	@Column(name = "studentid", length = 50, precision = 0)
+	private int studentid;
 	
-	@Column(name = "courseId", length = 50, precision = 0)
-	private int courseId;
+	@Column(name = "courseid", length = 50, precision = 0)
+	private int courseid;
 	
 	@Column(name = "name", length = 50, precision = 0)
 	private String name;
 
 	public MenteeEntity() {}
 
-	public MenteeEntity(int studentId, int courseId, String name) {
+	public MenteeEntity(int studentid, int courseid, String name) {
 		super();
-		this.studentId = studentId;
-		this.courseId = courseId;
+		this.studentid = studentid;
+		this.courseid = courseid;
 		this.name = name;
 	}
 
 	public int getStudentId() {
-		return studentId;
+		return studentid;
 	}
 
 	public void setStudentId(int studentId) {
-		this.studentId = studentId;
+		this.studentid = studentId;
 	}
 
 	public int getCourseId() {
-		return courseId;
+		return courseid;
 	}
 
 	public void setCourseId(int courseId) {
-		this.courseId = courseId;
+		this.courseid = courseId;
 	}
 
 	public String getName() {
