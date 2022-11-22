@@ -43,10 +43,6 @@ public class StudentEntity {
 		return studentId;
 	}
 
-	public void setStudentId(int studentId) {
-		this.studentId = studentId;
-	}
-
 	public String getFirstName() {
 		return firstName;
 	}
