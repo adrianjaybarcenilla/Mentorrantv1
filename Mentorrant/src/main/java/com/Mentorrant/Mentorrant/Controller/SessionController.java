@@ -28,14 +28,14 @@ public class SessionController{
 		return seserv.addSession(session);
 	}
 
-	@GetMapping("/get")
+	@GetMapping("/getAllSession")
 	public List<SessionEntity>getAllSession(){
 		return seserv.getAllSession();
 	}
 	
-	@GetMapping("/getBySessionId")
-	public SessionEntity findBySessionId(@RequestParam int id) {
-		return seserv.findBySessionId(id);
+	@GetMapping("/getBySessionDescription")
+	public SessionEntity findBySessionDescription(@RequestParam String sessionDescription) {
+		return seserv.findBySessionDescription(sessionDescription);
 	}
 	
 

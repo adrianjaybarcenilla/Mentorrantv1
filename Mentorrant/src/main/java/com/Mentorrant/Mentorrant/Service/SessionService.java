@@ -23,9 +23,9 @@ public class SessionService {
 		return srepo.findAll();
 	}
 	
-	public SessionEntity findBySessionId(int sessionId) {
-		if(srepo.findBySessionId(sessionId) != null) {
-			return srepo.findBySessionId(sessionId);
+	public SessionEntity findBySessionDescription(String sessionDescription) {
+		if(srepo.findBySessionDescription(sessionDescription) != null) {
+			return srepo.findBySessionDescription(sessionDescription);
 		}else {
 			return null;
 		}
@@ -38,7 +38,7 @@ public class SessionService {
 			session = srepo.findById(id).get();
 			
 			session.setDateTime(newSession.getDateTime());
-			
+			session.setSessionDescription(newSession.getSessionDescription());
 			return srepo.save(session);
 		} catch(NoSuchElementException next) {
 			throw new Exception ("Session Id" + id + " Does Not Exist!");
