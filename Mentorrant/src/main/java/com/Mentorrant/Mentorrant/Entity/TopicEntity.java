@@ -10,9 +10,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tbl_topic", schema ="db_mentorrant")
 public class TopicEntity {
+	
 	@Id
-	@Column(name = "topicId", length = 50, precision = 0)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "topicid", length = 50, precision = 0)
 	private int topicId;
 	
 	@Column(name = "subject", length = 50, precision = 0)
@@ -20,9 +21,9 @@ public class TopicEntity {
 
 	public TopicEntity() {}
 	
-	public TopicEntity(int topicId, String subject) {
+	public TopicEntity(int topicid, String subject) {
 		super();
-		this.topicId = topicId;
+		this.topicId = topicid;
 		this.subject = subject;
 	}
 

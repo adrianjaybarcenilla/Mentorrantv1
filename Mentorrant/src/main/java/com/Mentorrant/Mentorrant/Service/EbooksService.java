@@ -15,25 +15,25 @@ public class EbooksService {
 	@Autowired
 	EbooksRepository ebrepo;
 	
-	public EbooksEntity addEbook(EbooksEntity book) {
-		return ebrepo.save(book);
+	public EbooksEntity addEbook(EbooksEntity Ebook) {
+		return ebrepo.save(Ebook);
 	}
 	
 	public List<EbooksEntity>getAllEbooks(){
 		return ebrepo.findAll();
 	}
 	
-	public EbooksEntity findbyBookName(String bookName) {
-		if(ebrepo.findByBookTitle(bookName) != null) {
-			return ebrepo.findByBookTitle(bookName);
+	public EbooksEntity findByBookTitle(String book_title) {
+		if(ebrepo.findByBooktitle(book_title) != null) {
+			return ebrepo.findByBooktitle(book_title);
 		}else {
 			return null;
 		}
 	}
 	
-	public EbooksEntity findbyGenre(String bookGenre) {
-		if(ebrepo.findByBookGenre(bookGenre) != null) {
-			return ebrepo.findByBookGenre(bookGenre);			
+	public EbooksEntity findByBookGenre(String book_genre) {
+		if(ebrepo.findBybookgenre(book_genre) != null) {
+			return ebrepo.findBybookgenre(book_genre);			
 		}else {
 			return null;
 		}
@@ -45,10 +45,10 @@ public class EbooksService {
 		try {
 			ebook = ebrepo.findById(id).get();
 			
-			ebook.setBookTitle(newEbook.getBookTitle());
-			ebook.setBookAuthor(newEbook.getBookAuthor());
-			ebook.setBookGenre(newEbook.getBookGenre());
-			ebook.setyearPublish(newEbook.getyearPublish());
+			ebook.setBook_title(newEbook.getBook_title());
+			ebook.setBook_author(newEbook.getBook_author());
+			ebook.setBook_genre(newEbook.getBook_genre());
+			ebook.setYear_publish(newEbook.getYear_publish());
 			
 			return ebrepo.save(ebook);
 		} catch(NoSuchElementException next) {

@@ -38,6 +38,7 @@ CREATE TABLE `tbl_mentee` (
 
 LOCK TABLES `tbl_mentee` WRITE;
 /*!40000 ALTER TABLE `tbl_mentee` DISABLE KEYS */;
+INSERT INTO `tbl_mentee` VALUES ('0','fsfdsf','4'),('1','Ella','12');
 /*!40000 ALTER TABLE `tbl_mentee` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-21 22:01:34
+-- Dump completed on 2022-11-22 11:27:33
