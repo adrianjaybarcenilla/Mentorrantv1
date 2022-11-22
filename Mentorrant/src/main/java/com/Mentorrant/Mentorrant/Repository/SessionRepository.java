@@ -7,5 +7,5 @@ import com.Mentorrant.Mentorrant.Entity.SessionEntity;
 
 @Repository
 public interface SessionRepository extends JpaRepository <SessionEntity, Integer> {
-	SessionEntity findBySessionId(int sessionId);
+	SessionEntity findBySessionDescription(String sessionDescription);
 }
