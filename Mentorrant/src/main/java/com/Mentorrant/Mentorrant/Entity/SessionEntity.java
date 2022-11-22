@@ -16,13 +16,15 @@ public class SessionEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int sessionId;
 	private LocalDateTime dateTime;
+	private String sessionDescription;
 	
 	public SessionEntity() {}
 	
-	public SessionEntity(int sessionId, LocalDateTime dateTime) {
+	public SessionEntity(int sessionId, LocalDateTime dateTime, String sessionDescription) {
 		super();
 		this.sessionId = sessionId;
 		this.dateTime = dateTime;
+		this.sessionDescription = sessionDescription;
 	}
 
 	public int getSessionId() {
@@ -35,5 +37,13 @@ public class SessionEntity {
 
 	public void setDateTime(LocalDateTime dateTime) {
 		this.dateTime = dateTime;
+	}
+
+	public String getSessionDescription() {
+		return sessionDescription;
+	}
+
+	public void setSessionDescription(String sessionDescription) {
+		this.sessionDescription = sessionDescription;
 	}	
 }
