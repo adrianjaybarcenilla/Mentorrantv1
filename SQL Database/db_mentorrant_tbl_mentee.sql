@@ -25,11 +25,12 @@ DROP TABLE IF EXISTS `tbl_mentee`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tbl_mentee` (
-  `studentId` varchar(45) NOT NULL,
-  `name` varchar(45) DEFAULT NULL,
-  `courseId` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`studentId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `studentId` int NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `courseId` int NOT NULL,
+  `menteeid` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`menteeid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +39,7 @@ CREATE TABLE `tbl_mentee` (
 
 LOCK TABLES `tbl_mentee` WRITE;
 /*!40000 ALTER TABLE `tbl_mentee` DISABLE KEYS */;
-INSERT INTO `tbl_mentee` VALUES ('0','fsfdsf','4'),('1','Ella','12');
+INSERT INTO `tbl_mentee` VALUES (0,'fsfdsf',35,1),(1,'Ella',12,2);
 /*!40000 ALTER TABLE `tbl_mentee` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-22 11:27:33
+-- Dump completed on 2022-11-23 19:46:47
