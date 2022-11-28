@@ -18,13 +18,17 @@ public class TopicEntity {
 	
 	@Column(name = "subject", length = 50, precision = 0)
 	private String subject;
-
-	public TopicEntity() {}
 	
-	public TopicEntity(int topicid, String subject) {
+	@Column(name = "courseid", length = 50, precision = 0)
+	private int courseid;
+	
+	public TopicEntity() {}
+
+	public TopicEntity(int topicId, String subject, int courseid) {
 		super();
-		this.topicId = topicid;
+		this.topicId = topicId;
 		this.subject = subject;
+		this.courseid = courseid;
 	}
 
 	public int getTopicId() {
@@ -38,4 +42,9 @@ public class TopicEntity {
 	public void setSubject(String subject) {
 		this.subject = subject;
 	}
+
+	public int getCourseid() {
+		return courseid;
+	}
+
 }
