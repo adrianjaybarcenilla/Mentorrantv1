@@ -12,6 +12,10 @@ import javax.persistence.Table;
 public class MenteeEntity {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "menteeid", length = 50, precision = 0)
+	private int menteeid;
+
 	@Column(name = "studentid", length = 50, precision = 0)
 	private int studentid;
 	
@@ -22,14 +26,19 @@ public class MenteeEntity {
 	private int courseid;
 	
 	public MenteeEntity() {}
-
-	public MenteeEntity(int studentid, String name, int courseid) {
+	
+	public MenteeEntity(int menteeid, int studentid, String name, int courseid) {
 		super();
+		this.menteeid = menteeid;
 		this.studentid = studentid;
 		this.name = name;
 		this.courseid = courseid;
 	}
 
+	public int getMenteeId() {
+		return menteeid;
+	}
+	
 	public int getStudentId() {
 		return studentid;
 	}
