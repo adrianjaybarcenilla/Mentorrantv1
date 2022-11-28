@@ -17,6 +17,8 @@ public class ChannelEntity {
 	
 	@Column(name = "channelNumber")
 	private String channelNumber;
+	
+	public ChannelEntity() {};
 
 	public ChannelEntity(int channelId, String channelNumber) {
 		super();
