@@ -40,5 +40,4 @@ public class ChannelEntity {
 		this.channelNumber = channelNumber;
 	}
 	
-	`
 }
