@@ -30,7 +30,7 @@ public class AdminController {
 		return aserve.addAdmin(admin);
 	}
 
-	@GetMapping("/get")
+	@GetMapping("/getAllAdmin")
 	public List<AdminEntity>getAllAdmin(){
 		return aserve.getAllAdmins();
 	}
@@ -51,7 +51,7 @@ public class AdminController {
 	}
 	
 	@DeleteMapping("/deleteAdmin/{id}")
-	public String deleteAdmin(@PathVariable int adminId) {
-		return aserve.deleteAdmin(adminId);
+	public String deleteAdmin(@PathVariable int id) {
+		return aserve.deleteAdmin(id);
 	}
 }

@@ -24,7 +24,7 @@ public class StudentController {
 	StudentService studserve;
 	
 	@PostMapping("/postStudent")
-	public StudentEntity addEbook(@RequestBody StudentEntity student) {
+	public StudentEntity addStudent(@RequestBody StudentEntity student) {
 		return studserve.addStudent(student);
 	}
 
@@ -48,7 +48,7 @@ public class StudentController {
 		return studserve.updateStudent(studentId, newStudent);
 	}
 	
-	@DeleteMapping("/deleteStudent/{id}")
+	@DeleteMapping("/deleteStudent/{studentId}")
 	public String deleteStudent(@PathVariable int studentId) {
 		return studserve.deleteStudent(studentId);
 	}

@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `db_mentorrant` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `db_mentorrant`;
 -- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
 --
 -- Host: localhost    Database: db_mentorrant
@@ -18,8 +16,30 @@ USE `db_mentorrant`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping routines for database 'db_mentorrant'
+-- Table structure for table `tbl_channel`
 --
+
+DROP TABLE IF EXISTS `tbl_channel`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tbl_channel` (
+  `channel_id` int NOT NULL AUTO_INCREMENT,
+  `channel_number` varchar(15) NOT NULL,
+  PRIMARY KEY (`channel_id`),
+  UNIQUE KEY `channel_id_UNIQUE` (`channel_id`),
+  UNIQUE KEY `channel_number_UNIQUE` (`channel_number`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_channel`
+--
+
+LOCK TABLES `tbl_channel` WRITE;
+/*!40000 ALTER TABLE `tbl_channel` DISABLE KEYS */;
+INSERT INTO `tbl_channel` VALUES (2,'123456'),(3,'123456789');
+/*!40000 ALTER TABLE `tbl_channel` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -30,4 +50,4 @@ USE `db_mentorrant`;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-21 16:56:57
+-- Dump completed on 2022-11-28 20:59:18

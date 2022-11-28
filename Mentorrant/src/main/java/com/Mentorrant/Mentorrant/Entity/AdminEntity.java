@@ -1,5 +1,6 @@
 package com.Mentorrant.Mentorrant.Entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +13,7 @@ public class AdminEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "adminId", length = 50, precision = 0)
 	private int adminId;
 	
 	private String name;
