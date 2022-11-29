@@ -40,8 +40,8 @@ public class EbooksController {
 	}
 	
 	@GetMapping("/getByBookGenre")
-	public EbooksEntity findByBookGenre(@RequestParam String book_genre) {
-		return ebserve.findByBookGenre(book_genre);
+	public List<EbooksEntity> findAllByBookGenre(@RequestParam String book_genre) {
+		return ebserve.findAllByBookGenre(book_genre);
 	}
 	
 	@PutMapping("/UpdateEbook")
