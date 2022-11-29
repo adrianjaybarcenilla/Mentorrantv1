@@ -12,6 +12,7 @@ import com.Mentorrant.Mentorrant.Repository.TopicRepository;
 
 @Service
 public class TopicService {
+	
 	@Autowired
 	TopicRepository mrepo;
 	
@@ -24,8 +25,8 @@ public class TopicService {
 	}
 	
 	public TopicEntity findbySubject(String subject) {
-		if(mrepo.findBySubject(subject) != null) {
-			return mrepo.findBySubject(subject);
+		if(mrepo.findBysubject(subject) != null) {
+			return mrepo.findBysubject(subject);
 		}else {
 			return null;
 		}
