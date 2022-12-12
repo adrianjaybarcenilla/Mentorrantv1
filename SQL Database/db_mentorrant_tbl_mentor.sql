@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `db_mentorrant` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `db_mentorrant`;
 -- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
 --
 -- Host: localhost    Database: db_mentorrant
@@ -23,12 +25,13 @@ DROP TABLE IF EXISTS `tbl_mentor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tbl_mentor` (
-  `mentorid` int NOT NULL AUTO_INCREMENT,
-  `studentid` int NOT NULL,
-  `name` varchar(45) NOT NULL,
-  `rating` double NOT NULL,
-  `courseid` int NOT NULL,
-  PRIMARY KEY (`mentorid`)
+  `mentor_id` int NOT NULL AUTO_INCREMENT,
+  `student_id` int NOT NULL,
+  `rating` double DEFAULT NULL,
+  `course_id` int NOT NULL,
+  PRIMARY KEY (`mentor_id`),
+  KEY `course_idx` (`course_id`),
+  KEY `student_idx` (`student_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,7 +41,7 @@ CREATE TABLE `tbl_mentor` (
 
 LOCK TABLES `tbl_mentor` WRITE;
 /*!40000 ALTER TABLE `tbl_mentor` DISABLE KEYS */;
-INSERT INTO `tbl_mentor` VALUES (4,1,'ezez',5,1),(5,100,'ezez',1.1,500),(6,3124,'ezez',1.1,500);
+INSERT INTO `tbl_mentor` VALUES (4,1,5,1),(5,100,1.1,500),(6,3124,1.1,500);
 /*!40000 ALTER TABLE `tbl_mentor` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-28 20:59:18
+-- Dump completed on 2022-12-13  7:10:17
