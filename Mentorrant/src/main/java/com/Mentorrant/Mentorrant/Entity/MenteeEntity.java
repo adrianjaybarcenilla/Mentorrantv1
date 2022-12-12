@@ -1,10 +1,13 @@
 package com.Mentorrant.Mentorrant.Entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -13,49 +16,47 @@ public class MenteeEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "menteeid", length = 50, precision = 0)
-	private int menteeid;
-
-	@Column(name = "studentid", length = 50, precision = 0)
-	private int studentid;
+	@Column(name = "menteeId", length = 50, precision = 0)
+	private int menteeId;
 	
-	@Column(name = "name", length = 50, precision = 0)
-	private String name;
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "studentId", referencedColumnName = "studentId")
+	private StudentEntity student;
 
-	@Column(name = "courseid", length = 50, precision = 0)
-	private int courseid;
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "courseId", referencedColumnName = "courseId")
+	private CourseEntity course;
 	
 	public MenteeEntity() {}
-	
-	public MenteeEntity(int menteeid, int studentid, String name, int courseid) {
+
+	public MenteeEntity(int menteeId, StudentEntity student, CourseEntity course) {
 		super();
-		this.menteeid = menteeid;
-		this.studentid = studentid;
-		this.name = name;
-		this.courseid = courseid;
+		this.menteeId = menteeId;
+		this.student = student;
+		this.course = course;
 	}
 
 	public int getMenteeId() {
-		return menteeid;
+		return menteeId;
+	}
+
+	public StudentEntity getStudent() {
+		return student;
+	}
+
+	public void setStudent(StudentEntity student) {
+		this.student = student;
+	}
+
+	public CourseEntity getCourse() {
+		return course;
+	}
+
+	public void setCourse(CourseEntity course) {
+		this.course = course;
 	}
 	
-	public int getStudentId() {
-		return studentid;
-	}
-
-	public void setStudentId(int studentId) {
-		this.studentid = studentId;
-	}
-
-	public int getCourseId() {
-		return courseid;
-	}
-
-	public void setCourseId(int courseId) {
-		this.courseid = courseId;
-	}
-
-	public String getName() {
-		return name;
-	}
+	
+	
+	
 }

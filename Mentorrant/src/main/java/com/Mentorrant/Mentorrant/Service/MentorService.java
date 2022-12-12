@@ -38,7 +38,6 @@ public class MentorService {
 			mentor = mRepo.findById(id).get();
 			
 			mentor.setStudentId(newMentor.getStudentId());
-			mentor.setName(newMentor.getName());
 			mentor.setRating(newMentor.getRating());
 			mentor.setCourseId(newMentor.getCourseId());
 			

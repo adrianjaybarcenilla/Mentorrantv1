@@ -1,11 +1,14 @@
 package com.Mentorrant.Mentorrant.Entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 @Table(name = "tbl_student")
@@ -15,6 +18,16 @@ public class StudentEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int studentId;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "accountId", referencedColumnName = "accountId")
+	private AccountEntity account;
+	
+	@OneToOne(mappedBy = "student")
+	private MenteeEntity mentee;
+	
+	@OneToOne(mappedBy = "student")
+	private MentorEntity mentor;
 
 	@Column(name = "firstName", length = 50, precision = 0)
 	private String firstName;
@@ -30,9 +43,10 @@ public class StudentEntity {
 	
 	public StudentEntity() {}
 
-	public StudentEntity(int studentId, String firstName, String lastName, String program, int year) {
+	public StudentEntity(int studentId, AccountEntity account, String firstName, String lastName, String program, int year) {
 		super();
 		this.studentId = studentId;
+		this.account = account;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.program = program;
@@ -41,6 +55,10 @@ public class StudentEntity {
 
 	public int getStudentId() {
 		return studentId;
+	}
+	
+	public AccountEntity getaccount() {
+		return account;
 	}
 
 	public String getFirstName() {

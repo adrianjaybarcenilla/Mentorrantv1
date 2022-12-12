@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -12,62 +13,63 @@ import javax.persistence.Table;
 public class MentorEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "mentorid")
-	private int mentorid;
+	@Column(name = "mentorId")
+	private int mentorId;
 	
-	private int studentid;
-	private String name; 
+	@JoinColumn(name = "studentId", referencedColumnName = "studentId")
+	private int studentId;
+
+	@Column(name = "rating")
 	private double rating;
-	private int courseid;
+	
+	@JoinColumn(name = "courseId", referencedColumnName = "courseId")
+	private int courseId;
 	
 	public MentorEntity() {
 		super();
 	}
 
-	public MentorEntity(int mentorid, int studentid, String name, int rating, int courseid) {
+	public MentorEntity(int mentorId, int studentId, double rating, int courseId) {
 		super();
-		this.mentorid = mentorid;
-		this.studentid = studentid;
-		this.name = name;
+		this.mentorId = mentorId;
+		this.studentId = studentId;
 		this.rating = rating;
-		this.courseid = courseid;
+		this.courseId = courseId;
 	}
 
 	public int getMentorId() {
-		return mentorid;
+		return mentorId;
+	}
+
+	public void setMentorId(int mentorId) {
+		this.mentorId = mentorId;
 	}
 
 	public int getStudentId() {
-		return studentid;
+		return studentId;
 	}
 
-	public void setStudentId(int studentId){
-		this.studentid = studentId;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
 	}
 
 	public double getRating() {
 		return rating;
 	}
 
-	public void setRating(double d) {
-		this.rating = d;
+	public void setRating(double rating) {
+		this.rating = rating;
 	}
 
 	public int getCourseId() {
-		return courseid;
+		return courseId;
 	}
 
 	public void setCourseId(int courseId) {
-		this.courseid = courseId;
+		this.courseId = courseId;
 	}
 	
+	
+
 	
 }

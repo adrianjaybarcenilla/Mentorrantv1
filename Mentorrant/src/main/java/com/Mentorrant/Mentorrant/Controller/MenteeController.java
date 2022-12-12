@@ -34,14 +34,9 @@ public class MenteeController {
 		return mentsev.getAllMentee();
 	}
 	
-	@GetMapping("/getByName")
-	public MenteeEntity findbyName(@RequestParam String name) throws Exception{
-		return mentsev.findbyName(name);
-	}
-
-	@PutMapping("/UpdateMentee")
-	public MenteeEntity updateBook(@RequestParam int id , @RequestBody MenteeEntity newEbook) throws Exception{
-		return mentsev.updateMentee(id, newEbook);
+	@GetMapping("/getMenteeByStudentFirstName")
+	public MenteeEntity getMenteeByStudentFirstName(@RequestParam String firstName){
+		return mentsev.findMenteeByStudentFirstName(firstName);
 	}
 	
 	@DeleteMapping("/DeleteMentee/{id}")
