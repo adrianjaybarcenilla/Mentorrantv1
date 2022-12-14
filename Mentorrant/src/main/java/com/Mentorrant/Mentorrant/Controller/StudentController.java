@@ -3,6 +3,7 @@ package com.Mentorrant.Mentorrant.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,31 +24,37 @@ public class StudentController {
 	@Autowired
 	StudentService studserve;
 	
+	@CrossOrigin
 	@PostMapping("/postStudent")
 	public StudentEntity addStudent(@RequestBody StudentEntity student) {
 		return studserve.addStudent(student);
 	}
 
+	@CrossOrigin
 	@GetMapping("/getAllStudents")
 	public List<StudentEntity>getAllStudents(){
 		return studserve.getAllStudent();
 	}
 	
+	@CrossOrigin
 	@GetMapping("/findByFirstName")
 	public StudentEntity findByFirstName(@RequestParam String firstName) {
 		return studserve.findByFirstName(firstName);
 	}
 	
+	@CrossOrigin
 	@GetMapping("/findByLastName")
 	public StudentEntity findByLastName(@RequestParam String lastName) {
 		return studserve.findByLastName(lastName);
 	}
 	
+	@CrossOrigin
 	@PutMapping("/updateStudent")
 	public StudentEntity updateStudent(@RequestParam int studentId , @RequestBody StudentEntity newStudent) throws Exception{
 		return studserve.updateStudent(studentId, newStudent);
 	}
 	
+	@CrossOrigin
 	@DeleteMapping("/deleteStudent/{studentId}")
 	public String deleteStudent(@PathVariable int studentId) {
 		return studserve.deleteStudent(studentId);

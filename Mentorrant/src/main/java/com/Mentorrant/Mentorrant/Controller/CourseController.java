@@ -3,6 +3,7 @@ package com.Mentorrant.Mentorrant.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,31 +24,37 @@ public class CourseController{
 	@Autowired
 	CourseService cserv;
 	
+	@CrossOrigin
 	@PostMapping("/postCourse")
 	public CourseEntity addCourse(@RequestBody CourseEntity course) {
 		return cserv.addCourse(course);
 	}
 
+	@CrossOrigin
 	@GetMapping("/getAllCourse")
 	public List<CourseEntity>getAllCourse(){
 		return cserv.getAllCourse();
 	}
 	
+	@CrossOrigin
 	@GetMapping("/getByCourseCode")
 	public CourseEntity findByCourseCode(@RequestParam String courseCode) {
 		return cserv.findByCourseCode(courseCode);
 	}
 	
+	@CrossOrigin
 	@GetMapping("/getByCourseDescription")
 	public CourseEntity findByCourseDescription(@RequestParam String courseDescription) {
 		return cserv.findByCourseDescription(courseDescription);
 	}
 
+	@CrossOrigin
 	@PutMapping("/updateCourse")
 	public CourseEntity update(@RequestParam int id , @RequestBody CourseEntity newCourse) throws Exception{
 		return cserv.updateCourse(id, newCourse);
 	}
 	
+	@CrossOrigin
 	@DeleteMapping("/deleteCourse/{id}")
 	public String deleteCourse(@PathVariable int id) {
 		return cserv.deleteCourse(id);

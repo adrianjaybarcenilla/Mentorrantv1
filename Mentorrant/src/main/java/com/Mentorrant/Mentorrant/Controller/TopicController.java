@@ -3,6 +3,7 @@ package com.Mentorrant.Mentorrant.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,26 +24,31 @@ public class TopicController {
 	@Autowired
 	TopicService topicserv;
 	
+	@CrossOrigin
 	@PostMapping("/postTopic")
 	public TopicEntity addTopic(@RequestBody TopicEntity topic) {
 		return topicserv.addTopic(topic);
 	}
-
+	
+	@CrossOrigin
 	@GetMapping("/getAllTopic")
 	public List<TopicEntity> getAllTopic(){
 		return topicserv.getAllTopic();
 	}
 	
+	@CrossOrigin
 	@GetMapping("/getBySubject")
 	public TopicEntity findbySubject(@RequestParam String subject) {
 		return topicserv.findbySubject(subject);
 	}
 
+	@CrossOrigin
 	@PutMapping("/UpdateTopic")
 	public TopicEntity updateTopic(@RequestParam int id , @RequestBody TopicEntity newEbook) throws Exception{
 		return topicserv.updateMentee(id, newEbook);
 	}
 	
+	@CrossOrigin
 	@DeleteMapping("/DeleteTopic/{id}")
 	public String deleteMentee(@PathVariable int id) {
 		return topicserv.deleteMentee(id);

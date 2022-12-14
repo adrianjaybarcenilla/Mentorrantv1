@@ -3,6 +3,7 @@ package com.Mentorrant.Mentorrant.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,31 +25,37 @@ public class EbooksController {
 	@Autowired
 	EbooksService ebserve;
 	
+	@CrossOrigin
 	@PostMapping("/postEbooks")
 	public EbooksEntity addEbook(@RequestBody EbooksEntity Ebook) {
 		return ebserve.addEbook(Ebook);
 	}
 
+	@CrossOrigin
 	@GetMapping("/get")
 	public List<EbooksEntity>getAllEbooks(){
 		return ebserve.getAllEbooks();
 	}
 	
+	@CrossOrigin
 	@GetMapping("/getByBookName")
 	public EbooksEntity findByBookTitle(@RequestParam String book_title) {
 		return ebserve.findByBookTitle(book_title);
 	}
 	
+	@CrossOrigin
 	@GetMapping("/getByBookGenre")
 	public EbooksEntity findByBookGenre(@RequestParam String book_genre) {
 		return ebserve.findByBookGenre(book_genre);
 	}
 	
+	@CrossOrigin
 	@PutMapping("/UpdateEbook")
 	public EbooksEntity updateBook(@RequestParam int id , @RequestBody EbooksEntity newEbook) throws Exception{
 		return ebserve.updateBook(id, newEbook);
 	}
 	
+	@CrossOrigin
 	@DeleteMapping("/DeleteEbook/{id}")
 	public String deleteBook(@PathVariable int id) {
 		return ebserve.deleteBook(id);

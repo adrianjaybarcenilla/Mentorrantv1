@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,31 +26,37 @@ public class AdminController {
 	@Autowired
 	AdminService aserve;
 	
+	@CrossOrigin
 	@PostMapping("/postAdmin")
 	public AdminEntity addAdmin(@RequestBody AdminEntity admin) {
 		return aserve.addAdmin(admin);
 	}
 
+	@CrossOrigin
 	@GetMapping("/getAllAdmin")
 	public List<AdminEntity>getAllAdmin(){
 		return aserve.getAllAdmins();
 	}
 	
+	@CrossOrigin
 	@GetMapping("/getByAdminName")
 	public AdminEntity findByName(@RequestParam String name) {
 		return aserve.findByName(name);
 	}
 	
+	@CrossOrigin
 	@GetMapping("/getByExpertise")
 	public AdminEntity findByExpertise(@RequestParam String expertise) {
 		return aserve.findByExpertise(expertise);
 	}
 	
+	@CrossOrigin
 	@PutMapping("/putAdmin")
 	public AdminEntity updateAdmin(@RequestParam int adminId , @RequestBody AdminEntity newAdmin) throws Exception{
 		return aserve.updateAdmin(adminId, newAdmin);
 	}
 	
+	@CrossOrigin
 	@DeleteMapping("/deleteAdmin/{id}")
 	public String deleteAdmin(@PathVariable int id) {
 		return aserve.deleteAdmin(id);

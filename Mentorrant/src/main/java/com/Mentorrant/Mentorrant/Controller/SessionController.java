@@ -3,6 +3,7 @@ package com.Mentorrant.Mentorrant.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,11 +24,13 @@ public class SessionController{
 	@Autowired
 	SessionService seserv;
 	
+	@CrossOrigin
 	@PostMapping("/postSession")
 	public SessionEntity addSession(@RequestBody SessionEntity session) {
 		return seserv.addSession(session);
 	}
 
+	@CrossOrigin
 	@GetMapping("/getAllSession")
 	public List<SessionEntity>getAllSession(){
 		return seserv.getAllSession();
@@ -38,12 +41,13 @@ public class SessionController{
 		return seserv.findBySessionDescription(sessionDescription);
 	}
 	
-
+	@CrossOrigin
 	@PutMapping("/UpdateSession")
 	public SessionEntity update(@RequestParam int id , @RequestBody SessionEntity newSession) throws Exception{
 		return seserv.updateSession(id, newSession);
 	}
 	
+	@CrossOrigin
 	@DeleteMapping("/DeleteSession/{id}")
 	public String deleteSession(@PathVariable int id) {
 		return seserv.deleteSession(id);
