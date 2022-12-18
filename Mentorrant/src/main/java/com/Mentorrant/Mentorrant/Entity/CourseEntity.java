@@ -15,12 +15,6 @@ public class CourseEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int courseId;
 	
-	@OneToOne(mappedBy = "course")
-	private MenteeEntity mentee;
-	
-	@OneToOne(mappedBy = "course")
-	private MentorEntity mentor;
-	
 	private String courseCode;
 	private String courseDescription;
 	

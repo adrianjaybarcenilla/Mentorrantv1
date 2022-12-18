@@ -27,12 +27,8 @@ DROP TABLE IF EXISTS `tbl_mentee`;
 CREATE TABLE `tbl_mentee` (
   `mentee_id` int NOT NULL AUTO_INCREMENT,
   `student_id` int NOT NULL,
-  `course_id` int NOT NULL,
-  PRIMARY KEY (`mentee_id`),
-  KEY `student_idx` (`student_id`),
-  KEY `course_idx` (`course_id`),
-  CONSTRAINT `course` FOREIGN KEY (`course_id`) REFERENCES `tbl_course` (`course_id`),
-  CONSTRAINT `student` FOREIGN KEY (`student_id`) REFERENCES `tbl_student` (`student_id`)
+  `course_id` int DEFAULT NULL,
+  PRIMARY KEY (`mentee_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -55,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-13  7:10:16
+-- Dump completed on 2022-12-18 21:16:51

@@ -9,5 +9,5 @@ import com.Mentorrant.Mentorrant.Entity.StudentEntity;
 @Repository
 public interface MenteeRepository extends JpaRepository<MenteeEntity, Integer>{
 	
-	MenteeEntity findMenteeByStudentFirstName(String firstName);
+	MenteeEntity findByStudentId(int studentId);
 }

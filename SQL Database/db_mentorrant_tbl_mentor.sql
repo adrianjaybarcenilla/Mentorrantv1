@@ -29,9 +29,7 @@ CREATE TABLE `tbl_mentor` (
   `student_id` int NOT NULL,
   `rating` double DEFAULT NULL,
   `course_id` int NOT NULL,
-  PRIMARY KEY (`mentor_id`),
-  KEY `course_idx` (`course_id`),
-  KEY `student_idx` (`student_id`)
+  PRIMARY KEY (`mentor_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -41,7 +39,7 @@ CREATE TABLE `tbl_mentor` (
 
 LOCK TABLES `tbl_mentor` WRITE;
 /*!40000 ALTER TABLE `tbl_mentor` DISABLE KEYS */;
-INSERT INTO `tbl_mentor` VALUES (4,1,5,1),(5,100,1.1,500),(6,3124,1.1,500);
+INSERT INTO `tbl_mentor` VALUES (4,2,5,1),(5,2,1.1,2),(6,3,1.1,3);
 /*!40000 ALTER TABLE `tbl_mentor` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-13  7:10:17
+-- Dump completed on 2022-12-18 21:16:51
