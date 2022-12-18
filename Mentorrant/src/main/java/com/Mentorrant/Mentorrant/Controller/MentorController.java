@@ -3,6 +3,7 @@ package com.Mentorrant.Mentorrant.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import com.Mentorrant.Mentorrant.Entity.MentorEntity;
 import com.Mentorrant.Mentorrant.Service.MentorService;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/mentors")
 public class MentorController {
 	
@@ -34,8 +36,8 @@ public class MentorController {
 	}
 	
 	@GetMapping("/getByName")
-	public MentorEntity findbyName(@RequestParam String name) throws Exception {
-		return mServe.findByName(name);
+	public MentorEntity findMentorByStudentMentorFirstName(@RequestParam String name) throws Exception {
+		return mServe.findMentorByStudentFirstName(name);
 	}
 	
 	@PutMapping("/updateMentor")

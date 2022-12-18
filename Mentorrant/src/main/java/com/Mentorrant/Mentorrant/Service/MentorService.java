@@ -7,27 +7,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.Mentorrant.Mentorrant.Entity.MentorEntity;
+import com.Mentorrant.Mentorrant.Entity.StudentEntity;
 import com.Mentorrant.Mentorrant.Repository.MentorRepository;
+import com.Mentorrant.Mentorrant.Repository.StudentRepository;
 
 @Service
 public class MentorService {
 
 	@Autowired
 	MentorRepository mRepo;
+	@Autowired
+	StudentRepository srepo;
 	
 	public MentorEntity addMentor(MentorEntity mentor) {
 		return mRepo.save(mentor);
 	}
-	
+
 	public List<MentorEntity> getAllMentors(){
 		return mRepo.findAll();
 	}
 	
-	public MentorEntity findByName(String name) throws Exception{
-		if(mRepo.findByName(name) != null) {
-			return mRepo.findByName(name);
+	public MentorEntity findMentorByStudentFirstName(String firstName) throws Exception{
+		if(srepo.findByFirstName(firstName) != null) {
+			StudentEntity student = srepo.findByFirstName(firstName);
+			return mRepo.findByStudentId(student.getStudentId());
 		}else {
-			throw new Exception("There is no student having the name " + name + " in the database");
+			throw new Exception("There is no student having the name " + firstName + " in the database");
 		}
 	}
 	
@@ -37,9 +42,10 @@ public class MentorService {
 		try {
 			mentor = mRepo.findById(id).get();
 			
-			mentor.setStudentId(newMentor.getStudentId());
-			mentor.setRating(newMentor.getRating());
 			mentor.setCourseId(newMentor.getCourseId());
+			mentor.setMentorId(newMentor.getCourseId());
+			mentor.setRating(newMentor.getRating());
+			mentor.setStudentId(newMentor.getStudentId());
 			
 			return mRepo.save(mentor);
 		} catch(NoSuchElementException next) {

@@ -1,11 +1,14 @@
 package com.Mentorrant.Mentorrant.Entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,18 +19,16 @@ public class MentorEntity {
 	@Column(name = "mentorId")
 	private int mentorId;
 	
-	@JoinColumn(name = "studentId", referencedColumnName = "studentId")
+	@Column(name = "studentId")
 	private int studentId;
-
+	
 	@Column(name = "rating")
 	private double rating;
 	
-	@JoinColumn(name = "courseId", referencedColumnName = "courseId")
+	@Column(name = "courseId")
 	private int courseId;
 	
-	public MentorEntity() {
-		super();
-	}
+	public MentorEntity() {}
 
 	public MentorEntity(int mentorId, int studentId, double rating, int courseId) {
 		super();
@@ -68,8 +69,5 @@ public class MentorEntity {
 	public void setCourseId(int courseId) {
 		this.courseId = courseId;
 	}
-	
-	
-
 	
 }

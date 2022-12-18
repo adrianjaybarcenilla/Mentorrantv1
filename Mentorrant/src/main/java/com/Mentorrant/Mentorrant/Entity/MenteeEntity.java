@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -19,44 +20,44 @@ public class MenteeEntity {
 	@Column(name = "menteeId", length = 50, precision = 0)
 	private int menteeId;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "studentId", referencedColumnName = "studentId")
-	private StudentEntity student;
-
-	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "courseId", referencedColumnName = "courseId")
-	private CourseEntity course;
+	@Column(name = "studentId")
+	private int studentId;
+	
+	@Column(name = "courseId")
+	private int courseId;
 	
 	public MenteeEntity() {}
 
-	public MenteeEntity(int menteeId, StudentEntity student, CourseEntity course) {
+	public MenteeEntity(int menteeId, int studentId, int courseId) {
 		super();
 		this.menteeId = menteeId;
-		this.student = student;
-		this.course = course;
+		this.studentId = studentId;
+		this.courseId = courseId;
 	}
 
 	public int getMenteeId() {
 		return menteeId;
 	}
 
-	public StudentEntity getStudent() {
-		return student;
+	public void setMenteeId(int menteeId) {
+		this.menteeId = menteeId;
 	}
 
-	public void setStudent(StudentEntity student) {
-		this.student = student;
+	public int getStudentId() {
+		return studentId;
 	}
 
-	public CourseEntity getCourse() {
-		return course;
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
 	}
 
-	public void setCourse(CourseEntity course) {
-		this.course = course;
+	public int getCourseId() {
+		return courseId;
 	}
-	
-	
-	
-	
+
+	public void setCourseId(int courseId) {
+		this.courseId = courseId;
+	}
+
+	 
 }

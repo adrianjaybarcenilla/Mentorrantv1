@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -22,12 +23,6 @@ public class StudentEntity {
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "accountId", referencedColumnName = "accountId")
 	private AccountEntity account;
-	
-	@OneToOne(mappedBy = "student")
-	private MenteeEntity mentee;
-	
-	@OneToOne(mappedBy = "student")
-	private MentorEntity mentor;
 
 	@Column(name = "firstName", length = 50, precision = 0)
 	private String firstName;
