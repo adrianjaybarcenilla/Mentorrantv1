@@ -18,29 +18,29 @@ USE `db_mentorrant`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tlb_mentor`
+-- Table structure for table `tbl_mentor`
 --
 
-DROP TABLE IF EXISTS `tlb_mentor`;
+DROP TABLE IF EXISTS `tbl_mentor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tlb_mentor` (
-  `MentorId` int NOT NULL,
-  `StudentId` int NOT NULL,
-  `Name` varchar(45) NOT NULL,
-  `Rating` varchar(45) NOT NULL,
-  `CourseId` int NOT NULL,
-  PRIMARY KEY (`MentorId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `tbl_mentor` (
+  `mentor_id` int NOT NULL AUTO_INCREMENT,
+  `student_id` int NOT NULL,
+  `rating` double DEFAULT NULL,
+  `course_id` int NOT NULL,
+  PRIMARY KEY (`mentor_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tlb_mentor`
+-- Dumping data for table `tbl_mentor`
 --
 
-LOCK TABLES `tlb_mentor` WRITE;
-/*!40000 ALTER TABLE `tlb_mentor` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tlb_mentor` ENABLE KEYS */;
+LOCK TABLES `tbl_mentor` WRITE;
+/*!40000 ALTER TABLE `tbl_mentor` DISABLE KEYS */;
+INSERT INTO `tbl_mentor` VALUES (4,2,5,1),(5,2,1.1,2),(6,3,1.1,3);
+/*!40000 ALTER TABLE `tbl_mentor` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-21 21:41:59
+-- Dump completed on 2022-12-18 21:16:51

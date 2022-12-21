@@ -2,8 +2,8 @@ package com.Mentorrant.Mentorrant.Controller;
 
 import java.util.List;
 
-import org.hibernate.service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +19,7 @@ import com.Mentorrant.Mentorrant.Service.EbooksService;
 
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/Ebooks")
 public class EbooksController {
 
@@ -26,8 +27,8 @@ public class EbooksController {
 	EbooksService ebserve;
 	
 	@PostMapping("/postEbooks")
-	public EbooksEntity addEbook(@RequestBody EbooksEntity book) {
-		return ebserve.addEbook(book);
+	public EbooksEntity addEbook(@RequestBody EbooksEntity Ebook) {
+		return ebserve.addEbook(Ebook);
 	}
 
 	@GetMapping("/get")
@@ -36,13 +37,13 @@ public class EbooksController {
 	}
 	
 	@GetMapping("/getByBookName")
-	public EbooksEntity findbyBookName(@RequestParam String bookName) {
-		return ebserve.findbyBookName(bookName);
+	public EbooksEntity findByBookTitle(@RequestParam String book_title) {
+		return ebserve.findByBookTitle(book_title);
 	}
 	
 	@GetMapping("/getByBookGenre")
-	public EbooksEntity findbyGenre(@RequestParam String genre) {
-		return ebserve.findbyGenre(genre);
+	public EbooksEntity findByBookGenre(@RequestParam String book_genre) {
+		return ebserve.findByBookGenre(book_genre);
 	}
 	
 	@PutMapping("/UpdateEbook")

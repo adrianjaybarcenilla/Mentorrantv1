@@ -18,28 +18,29 @@ USE `db_mentorrant`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tbl_session`
+-- Table structure for table `tbl_channel`
 --
 
-DROP TABLE IF EXISTS `tbl_session`;
+DROP TABLE IF EXISTS `tbl_channel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tbl_session` (
-  `session_id` int NOT NULL AUTO_INCREMENT,
-  `date_time` datetime DEFAULT NULL,
-  `session_description` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`session_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `tbl_channel` (
+  `channel_id` int NOT NULL AUTO_INCREMENT,
+  `channel_number` varchar(15) NOT NULL,
+  PRIMARY KEY (`channel_id`),
+  UNIQUE KEY `channel_id_UNIQUE` (`channel_id`),
+  UNIQUE KEY `channel_number_UNIQUE` (`channel_number`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tbl_session`
+-- Dumping data for table `tbl_channel`
 --
 
-LOCK TABLES `tbl_session` WRITE;
-/*!40000 ALTER TABLE `tbl_session` DISABLE KEYS */;
-INSERT INTO `tbl_session` VALUES (2,NULL,'Tabang Lord'),(3,NULL,'Me and My mentee');
-/*!40000 ALTER TABLE `tbl_session` ENABLE KEYS */;
+LOCK TABLES `tbl_channel` WRITE;
+/*!40000 ALTER TABLE `tbl_channel` DISABLE KEYS */;
+INSERT INTO `tbl_channel` VALUES (2,'123456'),(3,'123456789'),(4,'hello123'),(5,'IS1234');
+/*!40000 ALTER TABLE `tbl_channel` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

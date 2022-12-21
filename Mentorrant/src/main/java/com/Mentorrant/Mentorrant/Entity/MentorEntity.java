@@ -12,35 +12,38 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tbl_mentee", schema ="db_mentorrant")
-public class MenteeEntity {
-	
+@Table(name = "tbl_mentor", schema ="db_mentorrant")
+public class MentorEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "menteeId", length = 50, precision = 0)
-	private int menteeId;
+	@Column(name = "mentorId")
+	private int mentorId;
 	
 	@Column(name = "studentId")
 	private int studentId;
 	
+	@Column(name = "rating")
+	private double rating;
+	
 	@Column(name = "courseId")
 	private int courseId;
 	
-	public MenteeEntity() {}
+	public MentorEntity() {}
 
-	public MenteeEntity(int menteeId, int studentId, int courseId) {
+	public MentorEntity(int mentorId, int studentId, double rating, int courseId) {
 		super();
-		this.menteeId = menteeId;
+		this.mentorId = mentorId;
 		this.studentId = studentId;
+		this.rating = rating;
 		this.courseId = courseId;
 	}
 
-	public int getMenteeId() {
-		return menteeId;
+	public int getMentorId() {
+		return mentorId;
 	}
 
-	public void setMenteeId(int menteeId) {
-		this.menteeId = menteeId;
+	public void setMentorId(int mentorId) {
+		this.mentorId = mentorId;
 	}
 
 	public int getStudentId() {
@@ -51,6 +54,14 @@ public class MenteeEntity {
 		this.studentId = studentId;
 	}
 
+	public double getRating() {
+		return rating;
+	}
+
+	public void setRating(double rating) {
+		this.rating = rating;
+	}
+
 	public int getCourseId() {
 		return courseId;
 	}
@@ -58,6 +69,5 @@ public class MenteeEntity {
 	public void setCourseId(int courseId) {
 		this.courseId = courseId;
 	}
-
-	 
+	
 }

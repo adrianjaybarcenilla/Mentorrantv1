@@ -25,10 +25,11 @@ DROP TABLE IF EXISTS `tbl_topic`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tbl_topic` (
-  `TopicId` int NOT NULL AUTO_INCREMENT,
-  `Subject` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`TopicId`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `topicid` int NOT NULL AUTO_INCREMENT,
+  `subject` varchar(45) DEFAULT NULL,
+  `courseid` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`topicid`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +38,7 @@ CREATE TABLE `tbl_topic` (
 
 LOCK TABLES `tbl_topic` WRITE;
 /*!40000 ALTER TABLE `tbl_topic` DISABLE KEYS */;
-INSERT INTO `tbl_topic` VALUES (1,'Application Develoment');
+INSERT INTO `tbl_topic` VALUES (2,'Appdev','321'),(3,'Automata','313'),(4,'IE','35'),(5,'IS2','32');
 /*!40000 ALTER TABLE `tbl_topic` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-21 16:56:55
+-- Dump completed on 2022-12-18 21:16:51

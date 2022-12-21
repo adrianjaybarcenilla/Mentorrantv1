@@ -25,12 +25,13 @@ DROP TABLE IF EXISTS `tbl_course`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tbl_course` (
-  `CourseId` int NOT NULL AUTO_INCREMENT,
-  `CourseCode` varchar(50) DEFAULT NULL,
-  `CourseDescription` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`CourseId`),
-  UNIQUE KEY `idCourse_UNIQUE` (`CourseId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `course_id` int NOT NULL AUTO_INCREMENT,
+  `course_code` varchar(255) NOT NULL,
+  `course_description` varchar(255) NOT NULL,
+  PRIMARY KEY (`course_id`),
+  UNIQUE KEY `course_code_UNIQUE` (`course_code`),
+  UNIQUE KEY `course_description_UNIQUE` (`course_description`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +40,7 @@ CREATE TABLE `tbl_course` (
 
 LOCK TABLES `tbl_course` WRITE;
 /*!40000 ALTER TABLE `tbl_course` DISABLE KEYS */;
+INSERT INTO `tbl_course` VALUES (1,'CSIT321','Application Development'),(2,'CSIT340','Industry Elective'),(3,'CS345','Intelligent Systems'),(4,'CS313','Automata Theory and Languages');
 /*!40000 ALTER TABLE `tbl_course` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-21 16:56:56
+-- Dump completed on 2022-12-18 21:16:52

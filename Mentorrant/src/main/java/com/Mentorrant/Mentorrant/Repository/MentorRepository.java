@@ -4,10 +4,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.Mentorrant.Mentorrant.Entity.MenteeEntity;
-import com.Mentorrant.Mentorrant.Entity.StudentEntity;
+import com.Mentorrant.Mentorrant.Entity.MentorEntity;
 
 @Repository
-public interface MenteeRepository extends JpaRepository<MenteeEntity, Integer>{
+public interface MentorRepository extends JpaRepository<MentorEntity , Integer> {
 	
-	MenteeEntity findByStudentId(int studentId);
+	MentorEntity findByStudentId(int studentId);
 }

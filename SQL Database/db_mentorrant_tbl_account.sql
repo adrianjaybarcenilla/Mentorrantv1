@@ -18,28 +18,29 @@ USE `db_mentorrant`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tbl_session`
+-- Table structure for table `tbl_account`
 --
 
-DROP TABLE IF EXISTS `tbl_session`;
+DROP TABLE IF EXISTS `tbl_account`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tbl_session` (
-  `session_id` int NOT NULL AUTO_INCREMENT,
-  `date_time` datetime DEFAULT NULL,
-  `session_description` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`session_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `tbl_account` (
+  `account_id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  PRIMARY KEY (`account_id`),
+  UNIQUE KEY `account_name_UNIQUE` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tbl_session`
+-- Dumping data for table `tbl_account`
 --
 
-LOCK TABLES `tbl_session` WRITE;
-/*!40000 ALTER TABLE `tbl_session` DISABLE KEYS */;
-INSERT INTO `tbl_session` VALUES (2,NULL,'Tabang Lord'),(3,NULL,'Me and My mentee');
-/*!40000 ALTER TABLE `tbl_session` ENABLE KEYS */;
+LOCK TABLES `tbl_account` WRITE;
+/*!40000 ALTER TABLE `tbl_account` DISABLE KEYS */;
+INSERT INTO `tbl_account` VALUES (1,'admin','123456'),(2,'kentstephen','kentsumalinog');
+/*!40000 ALTER TABLE `tbl_account` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

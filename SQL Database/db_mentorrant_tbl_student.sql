@@ -25,13 +25,17 @@ DROP TABLE IF EXISTS `tbl_student`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tbl_student` (
-  `StudentId` int NOT NULL AUTO_INCREMENT,
-  `Name` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `Program` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `Year` int NOT NULL,
-  PRIMARY KEY (`StudentId`),
-  UNIQUE KEY `Id_UNIQUE` (`StudentId`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `student_id` int NOT NULL AUTO_INCREMENT,
+  `account_id` int DEFAULT NULL,
+  `first_name` varchar(99) DEFAULT NULL,
+  `last_name` varchar(50) DEFAULT NULL,
+  `program` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `year` int NOT NULL,
+  PRIMARY KEY (`student_id`),
+  UNIQUE KEY `Id_UNIQUE` (`student_id`),
+  KEY `account_idx` (`account_id`),
+  CONSTRAINT `account_id` FOREIGN KEY (`account_id`) REFERENCES `tbl_account` (`account_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +44,7 @@ CREATE TABLE `tbl_student` (
 
 LOCK TABLES `tbl_student` WRITE;
 /*!40000 ALTER TABLE `tbl_student` DISABLE KEYS */;
-INSERT INTO `tbl_student` VALUES (1,'John William','BSCS',3),(2,'Yankee Caburnay','BSIT',2);
+INSERT INTO `tbl_student` VALUES (2,1,'Adrian Jay','Barcenilla','BSIT',2),(3,2,'Jane','Doe','BSCS',3);
 /*!40000 ALTER TABLE `tbl_student` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-21 16:56:56
+-- Dump completed on 2022-12-18 21:16:51
